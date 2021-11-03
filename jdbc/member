@@ -1,0 +1,5 @@
+alter table member modify (genger nvarchar2(10));
+alter table member rename column genger to gender; 
+
+select * from member;
+
