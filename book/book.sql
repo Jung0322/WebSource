@@ -11,6 +11,6 @@ insert into bookTBL values('1003', '자바의 신','강신용',30000);
 insert into bookTBL values('1004', '자바 1000제','김용만',31000);
 insert into bookTBL values('1005', 'spring','이민호',32000);
 
-select * from member;
+select * from bookTBL;
 
 insert into member values('hong123','hong123@','홍길동','남','hong123@gmail.com')
