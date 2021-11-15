@@ -5,7 +5,7 @@
 <%
 //세션에서 로그인 정보 가져오기
 
-MemberDTO loginDto = (MemberDTO) session.getAttribute("loginDto");
+// MemberDTO loginDto = (MemberDTO) session.getAttribute("loginDto");
 %>
 
 <form id="modifyform" action="/modify.do" method="post">
@@ -40,7 +40,8 @@ MemberDTO loginDto = (MemberDTO) session.getAttribute("loginDto");
    </div>      
 </form>
 <script>
-      let name = '<%=loginDto.getName()%>';
+   <%--    let name = '<%=loginDto.getName()%>'; --%>
+      let name = '${loginDto.name}';
 </script>
 <script src="../js/menu.js"></script>
 <%--버튼 클릭 이벤트 스크립트--%>

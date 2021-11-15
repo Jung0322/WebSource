@@ -7,7 +7,16 @@ $(function() {
       rules: {
          userid: {
             required: true,
-            validId: true
+            validId: true,
+			remote:{	//ajax
+				url:"/dupId.do",
+				type:"post",
+				data:{
+					userid: function(){
+						return $("#userid").val();
+					}
+				}
+			}
          },
          password: {
             required: true,
@@ -31,7 +40,8 @@ $(function() {
       },
       messages: {
          userid: {
-            required: "아이디를 입력해주세요"
+            required: "아이디를 입력해주세요",
+			remote:"이 아이디는 사용중입니다."
          },
          password: {
             required: "비밀번호를 입력해주세요"

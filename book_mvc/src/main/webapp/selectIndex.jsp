@@ -2,6 +2,7 @@
 <%@page import="book.domain.BookDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -73,7 +74,7 @@ $(function(){
 					<div class="tab-pane fade" id="all" role="tabpanel"
 						aria-labelledby="list-all-list">
 						<%
-						List<BookDTO> list = (List<BookDTO>) request.getAttribute("list");
+						/* List<BookDTO> list = (List<BookDTO>) request.getAttribute("list"); */
 						%>
 						<%--회원 전체 조회 --%>
 						<table class="table">
@@ -86,7 +87,7 @@ $(function(){
 								</tr>
 							</thead>
 							<tbody>
-								<%
+								<%-- <%
 								for (BookDTO dto : list) {
 								%>
 								<tr>
@@ -97,7 +98,15 @@ $(function(){
 								</tr>
 								<%
 								}
-								%>
+								%> --%>
+								<c:forEach var="dto" items="${list}">
+								<tr>
+									<th scope="row">${dto.code}</th>
+									<td>${dto.title}</td>
+									<td>${dto.writer}</td>
+									<td>${dto.price}</td>
+								</tr>
+								</c:forEach>
 							</tbody>
 						</table>
 
